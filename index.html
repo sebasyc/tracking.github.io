@@ -34,7 +34,7 @@
 					<button>Buscar</button>
 				</div>
 			</form>
-			<div class="tracking-info active-delivery preparing">
+			<div class="tracking-info active-delivery">
 				<!-- --------------- Clases despacho a domicilio ---------------
 				class="tracking-info active-delivery" muestra el contenedor de la información del pedido.
 				class="tracking-info active-delivery canceled": pedido cancelado
@@ -42,13 +42,16 @@
 				class="tracking-info active-delivery preparing": preparando el pedido
 				class="tracking-info active-delivery sent": pedido enviado
 				class="tracking-info active-delivery delivered": pedido entregado
+				class="tracking-info active-delivery return": pedido devuelto
 				 ------------------------------------------ -->
 				 <!-- --------------- Clases retiro en tienda ---------------
 				class="tracking-info active-store" muestra el contenedor de la información del pedido.
 				class="tracking-info active-store canceled" pedido cancelado
 				class="tracking-info active-store processing" procesando pedido
 				class="tracking-info active-store preparing" preparando el pedido
-				class="tracking-info active-store delivered" pedido retirado
+				class="tracking-info active-store delivered" pedido listo para retirar
+				class="tracking-info active-store delivered-ok" pedido retirado
+				class="tracking-info active-store return" pedido devuelto
 				 ------------------------------------------ -->
 				<div class="tracking-info__list">
 					<ul>
@@ -91,6 +94,14 @@
 					<div class="status-col status-col--second-store">
 						<div class="status-col__circle"><i class="fas fa-store"></i></div>
 						<h3>Pedido listo para ser retirado</h3>
+					</div>
+					<div class="status-col status-col--third-store">
+						<div class="status-col__circle"><i class="fas fa-check-circle"></i></div>
+						<h3>Tu pedido ya fue retirado</h3>
+					</div>
+					<div class="status-col status-col--return">
+						<div class="status-col__circle"><i class="fas fa-exchange-alt"></i></div>
+						<h3>Pedio devuelto</h3>
 					</div>
 				</div>
 			</div>
