@@ -196,7 +196,7 @@ body {
 			}
 			.status-col {
 				position: relative;
-				padding: 0 5em;
+				padding: 0 3.5em;
 				@media (max-width: 768px) {
 					display: flex;
 					align-items: center;
@@ -207,20 +207,20 @@ body {
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					width: 120px;
-					height: 120px;
+					width: 110px;
+					height: 110px;
 					border-radius: 100%;
 					background-color: #F2F2F2;
 					i {
 						display: block;
-						font-size: 2.875em;
+						font-size: 2.5em;
 						color: #999999;
 					}
 				}
 				h3 {
 					opacity: 0;
 					padding: .65em 0 0;
-					width: 120px;
+					width: 110px;
 					font-size: 1em;
 					color: #999999;
 					text-align: center;
@@ -230,16 +230,16 @@ body {
 						margin-left: 1em;
 					}
 				}
-				&--canceled, &--first, &--second, &--first-store, &--second-store {
+				&--canceled, &--first-paid, &--first-store-paid, &--first, &--second, &--first-store, &--second-store {
 					.status-col {
 						&__circle {
 							&:after {
 								content: '';
 								position: absolute;
-								width: 170px;
+								width: 150px;
 								height: 8px;
 								background-color: #F2F2F2;
-								right: -170px;
+								right: -150px;
 								@include center-y;
 								@media (max-width: 768px) {
 									width: 8px;
@@ -296,7 +296,7 @@ body {
 			visibility: visible;
 			top: 0;
 			.status-col {
-				&--first-store, &--second-store, &--third-store {
+				&--first-store-paid, &--first-store, &--second-store, &--third-store {
 					display: none;
 				}
 			}
@@ -306,7 +306,7 @@ body {
 			visibility: visible;
 			top: 0;
 			.status-col {
-				&--first, &--second, &--third {
+				&--first-paid, &--first, &--second, &--third {
 					display: none;
 				}
 			}
@@ -314,6 +314,31 @@ body {
 		&.processing {
 			.status-info {
 				color: $processing;
+			}
+		}
+		&.paid {
+			.status-info {
+				color: $paid;
+			}
+			.status-col {
+				&--first-paid, &--first-store-paid {
+					.status-col {
+						&__circle {
+							background-color: $paid;
+							box-shadow: 0 0 25px rgba(240,101,49,.8);
+							i {
+								color: white;
+							}
+							&:after {
+								background-color: $paid;
+							}
+						}
+					}
+					h3 {
+						opacity: 1;
+						color: $paid;
+					}
+				}
 			}
 		}
 		&.canceled {
@@ -328,7 +353,7 @@ body {
 						color: $red;
 					}
 				}
-				&--first, &--first-store {
+				&--first-paid, &--first-store-paid {
 					display: none;
 				}
 			}
@@ -338,6 +363,24 @@ body {
 				color: $preparing;
 			}
 			.status-col {
+				&--first-paid, &--first-store-paid {
+					.status-col {
+						&__circle {
+							background-color: $paid;
+							box-shadow: 0 0 25px rgba(240,101,49,.8);
+							i {
+								color: white;
+							}
+							&:after {
+								background-color: $paid;
+							}
+						}
+					}
+					h3 {
+						opacity: 1;
+						color: $paid;
+					}
+				}
 				&--first, &--first-store {
 					.status-col {
 						&__circle {
@@ -363,6 +406,24 @@ body {
 				color: $sent;
 			}
 			.status-col {
+				&--first-paid, &--first-store-paid {
+					.status-col {
+						&__circle {
+							background-color: $paid;
+							box-shadow: 0 0 25px rgba(240,101,49,.8);
+							i {
+								color: white;
+							}
+							&:after {
+								background-color: $paid;
+							}
+						}
+					}
+					h3 {
+						opacity: 1;
+						color: $paid;
+					}
+				}
 				&--first {
 					.status-col {
 						&__circle {
@@ -406,6 +467,24 @@ body {
 				color: $delivered;
 			}
 			.status-col {
+				&--first-paid, &--first-store-paid {
+					.status-col {
+						&__circle {
+							background-color: $paid;
+							box-shadow: 0 0 25px rgba(240,101,49,.8);
+							i {
+								color: white;
+							}
+							&:after {
+								background-color: $paid;
+							}
+						}
+					}
+					h3 {
+						opacity: 1;
+						color: $paid;
+					}
+				}
 				&--first, &--first-store {
 					.status-col {
 						&__circle {
@@ -467,6 +546,24 @@ body {
 				color: $delivered;
 			}
 			.status-col {
+				&--first-paid, &--first-store-paid {
+					.status-col {
+						&__circle {
+							background-color: $paid;
+							box-shadow: 0 0 25px rgba(240,101,49,.8);
+							i {
+								color: white;
+							}
+							&:after {
+								background-color: $paid;
+							}
+						}
+					}
+					h3 {
+						opacity: 1;
+						color: $paid;
+					}
+				}
 				&--first, &--first-store {
 					.status-col {
 						&__circle {
